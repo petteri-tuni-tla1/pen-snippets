@@ -1,0 +1,16 @@
+body {
+  height: 200%;
+  width: 200%;
+  background: linear-gradient(90deg, SkyBlue, White, SkyBlue);
+  font-family: "Comic Sans MS";
+  font-size: 20px;
+}
+
+div#box1 {
+  float: left;
+  margin: 30px;
+}
+
+.kuva {
+  width: 500px;
+}

@@ -1,0 +1,19 @@
+	<main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content" role="main">
+    <h1> Salasanan muototarkastus </h1>    
+    <!-- Otettu formi täältä: https://getbootstrap.com/docs/4.5/components/forms/ --> 
+    <form action="javascript:handleForm(pass1.value, pass2.value)">
+  <div class="form-group">
+    <label for="exampleInputEmail1">Plain text: </label>
+    <input type="text" class="form-control" name="pass1"  id="pass1" aria-describedby="plain">
+  </div>          
+  <div class="form-group">
+    <label for="exampleInputPassword1">Password text: </label>    
+    <input type="password" name="pass2" id="pass2" class="form-control" id="pass2">
+  </div>      
+      <p><b> <span id="verdict"> ...  </> </b></p>       
+    <button type="submit" class="btn btn-primary">Submit</button>    
+<button class="btn btn-secondary" onclick="buttonClear()">Clear</button>
+
+    </form>
+
+

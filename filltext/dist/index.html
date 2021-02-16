@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - BibleText1d</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div id="stuff">
+  <p>
+    <!--  -->
+    <button id="hideConfig">Show Config </button>
+    <button id="hideFullText">Show Full Text </button>
+    <button id="hideLeft">Show Left Pane </button>
+  </p>
+  <div id="config">
+    <h3> Configuration pane </h3>
+
+    <select>
+        <option value="default"></option>
+  <option value="englishSkip">English - Skip Basics</option>
+</select>
+
+    <textarea id="areaText"></textarea>
+
+    </button>
+    <button id="updateConfig"> Update Config </button>
+
+
+  </div>
+  <div id="lef">
+    <button id="checkBut"> Check </button>
+    <button id="skipBut"> Skip </button>
+    <p id="bib3">
+    </p>
+    <p>
+
+
+      <span id="verdict" />
+    </p>
+  </div>
+  <div id="rig">
+    <p id="bib2">
+    </p>
+  </div>
+</div>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script><script  src="./script.js"></script>
+
+</body>
+</html>

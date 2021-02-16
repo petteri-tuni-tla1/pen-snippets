@@ -1,0 +1,44 @@
+body {
+  background: linear-gradient(90deg, LightSkyBlue, White, LightSkyBlue);
+  margin: 10px 10px 10px 10px;
+    font-family: "Comic Sans MS";
+  font-size: 15px;
+}
+
+button {
+      font-family: "Comic Sans MS";
+  font-size: 16px;
+  
+}
+
+textarea {
+  width: 50%;
+  height: 100px;
+  
+}
+
+div {
+  background-color: white;
+  opacity: 1.0;
+  float: left;
+  margin: 10px 10px 10px 10px;
+  width: 90%;
+}
+
+#config {
+  background-color: LightGray;
+}
+
+#stuff {
+  background: white;
+}
+
+#lef {
+  width: 40%;
+  background-color: LightGreen;
+}
+
+#rig {
+  width: 40%;
+  background-color: LightPink;
+}
