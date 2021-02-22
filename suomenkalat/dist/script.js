@@ -24,22 +24,22 @@ function alusta() {
     url: "http://www.luontoportti.com/suomi/images/10235.jpg"
   }, {
     nimi: "kiiski",
-    url: "http://www.lapinkalatalouskeskus.net/assets/Kuvitus/KUVAkiiski.png"
+    url: "https://www.luontoportti.com/suomi/images/10224.jpg"
   }, {
     nimi: "kuha",
-    url: "http://www.lapinkalatalouskeskus.net/assets/Kuvitus/KUVAkuha.png"
+    url: "https://www.luontoportti.com/suomi/images/10236.jpg"
   }, {
     nimi: "hauki",
-    url: "http://www.lapinkalatalouskeskus.net/assets/Kuvitus/_resampled/resizedimage600163-KUVAhauki.png"
+    url: "https://www.luontoportti.com/suomi/images/10218.jpg"
   }, {
     nimi: "siika",
-    url: "http://www.lapinkalatalouskeskus.net/assets/Kuvitus/KUVAsiika.png"
+    url: "https://www.luontoportti.com/suomi/images/10269.jpg"
   }, {
     nimi: "taimen",
-    url: " http://www.lapinkalatalouskeskus.net/assets/Kuvitus/KUVAtaimen.png"
+    url: "https://www.luontoportti.com/suomi/images/10277.jpg"
   }, {
     nimi: "ahven",
-    url: "http://www.lapinkalatalouskeskus.net/assets/Kuvitus/KUVAahven.png"
+    url: "https://www.luontoportti.com/suomi/images/10205.jpg"
   }, {
     nimi: "purotaimen",
     url: "http://kala-kassu.net/kuvat/lajikuvat/Purotaimen.jpg"
@@ -48,22 +48,22 @@ function alusta() {
     url: "http://kala-kassu.net/kuvat/lajikuvat/Lohi.jpg"
   }, {
     nimi: "made",
-    url: "http://www.lapinkalatalouskeskus.net/assets/Kuvitus/KUVAmade.png"
+    url: "https://www.luontoportti.com/suomi/images/10242.jpg"
   }, {
     nimi: "särki",
-    url: "http://www.lapinkalatalouskeskus.net/assets/Kuvitus/KUVAsrki.png"
+    url: "https://www.luontoportti.com/suomi/images/10259.jpg"
   }, {
     nimi: "salakka",
     url: "http://www.luontoportti.com/suomi/images/10264.jpg"
   }, {
     nimi: "muikku",
-    url: "http://www.lapinkalatalouskeskus.net/assets/Kuvitus/KUVAmuikku.png"
+    url: "https://www.luontoportti.com/suomi/images/10243.jpg"
   }, {
     nimi: "kuore",
-    url: "http://www.lapinkalatalouskeskus.net/assets/Kuvitus/KUVAkuore.png"
+    url: "https://www.luontoportti.com/suomi/images/10230.jpg"
   }, {
     nimi: "meritaimen",
-    url: "http://www.rktl.fi/www/uploads/images/mtaimen1.jpg"
+    url: "https://www.ifiske.ax/images/stories/fiskar/fishes/havsoring.jpg"
   }, {
     nimi: "na",
     url: "na"
