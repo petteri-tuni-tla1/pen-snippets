@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Salasanan kriteerit</title>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css'><link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html 
+<main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content" role="main">
+  -->
+<main class="bd-content" role="main">
+  <h1> Japania </h1>    
+    <!-- Otettu formi täältä: https://getbootstrap.com/docs/4.5/components/forms/ --> 
+    <form action="javascript:handleForm(pass1.value)">
+
+      <div class="row">      
+  <div class="form-group col-sm-4">
+    <label id="label" for="exampleInputEmail1">Answer: </label>
+    <input type="text" class="form-control" name="pass1"  id="pass1" aria-describedby="plain">
+  </div>              
+  <div class="col-sm-4">
+      <b> <span id="jp1"> ...  </> </span> </b>
+             
+    </div>
+    <div class="col-sm-4">
+      <b><span id="jp2"> ...  </> </b>
+    </div>
+    </div>
+
+    <div class="row"> <div class="col-sm-6">
+    <button type="submit" class="btn btn-primary">Submit</button>    
+<button hidden class="btn btn-secondary" onclick="buttonClear()">Clear</button>
+</div>
+<div class="col-sm-6">
+<button class="btn btn-secondary" onclick="buttonNext()">Proceed</button>
+</div>
+</div> 
+
+    </form>
+    <p><b> <span id="verdict"> ...  </> </b></p>    
+
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script><script  src="./script.js"></script>
+
+</body>
+</html>
