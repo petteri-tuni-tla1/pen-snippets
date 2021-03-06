@@ -33,7 +33,10 @@ function SetNextTaskItem() {
 }
 
 function TextToArray(srcText) {
+  console.log("TextToArray. Original text: "+srcText);
+  // var list = srcText.split(/[.]/);
   var list = srcText.split(/[.]/);
+  console.log("First item in the list: "+list[0]);
   return list;
 }
 
