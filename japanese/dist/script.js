@@ -48,6 +48,10 @@ function toggleConfig() {
   $("div#config").toggle(); 
 }
 
+function toggleTryout() {
+  $("div#tryout").toggle(); 
+}
+
 function updateConfig() {
   let filter = document.querySelector("#filter").value;
 
@@ -124,6 +128,7 @@ $(document).ready(function() {
   ---------------------------------------------- */  
 
   $("div#config").hide();
+  $("div#tryout").hide();
   updateConfig();
   buttonNext();
   // Register event functions:
