@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>あき は フィンランド に いく</title>
+    <title>Japanese - にほん ご</title>
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css'>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <link rel="stylesheet" href="./style.css">
@@ -18,7 +18,7 @@
 
     <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content" role="main"></main>
 
-    <h3> Suomea &nbsp;
+    <h3> Japanese &nbsp;
         <button class="btn btn-primary" onclick="buttonNext()">Proceed</button>
     </h3>
 
@@ -46,7 +46,7 @@
         </div>
 
         <div class="col-sm-4">
-            <button class="btn btn-primary" onclick="checkPass()">Check</button>            
+            <button class="btn btn-primary" value="submit" onclick="checkPass()">Check</button>            
         </div>
         <div class="col-sm-8">
             <span id="verdict"> ... </span> 
@@ -61,10 +61,11 @@
 
         <div class="col-sm-4">
             <label onclick="toggleConfig()">Config</label>
+
         </div>
         <div class="col-sm-8">
             <div id="config">
-                <input type="text" name="filter" id="filter" aria-describedby="plain" placeholder="label - '6.3.2021' e.g.">
+                <input type="text" name="filter" id="filter" aria-describedby="plain" placeholder="label - '6.3.2021' for instance 6.3.2021">
                 <button class="btn btn-secondary" onclick="updateConfig()">Update</button>
             </div>
         </div>
@@ -75,8 +76,8 @@
     <!--
   <script type="module" src="./script.js"></script>
   -->
-    <span id="curlang" hidden>fi</span>
-    <script src="./script.js"></script>
+  <span id="curlang" hidden>jp</span>  
+  <script src="./script.js"></script>
 
 </body>
 

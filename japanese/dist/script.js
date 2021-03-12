@@ -9,17 +9,27 @@
 var ndx = 0;
 var curNdx = 0;
 var subndx = 0;
+var curLang = "jp";
 
 function handleForm(val1) {
   debug_console("handleIt - PW: " +  val1);
   checkPass();
 }
 
-function checkPass() {  
+function checkPass() {
   // Default javascript syntax:
   let brave = document.querySelector("#pass1").value;
-  let correct1 = jpList[curNdx].jp1;
-  let correct2 = jpList[curNdx].jp2;
+
+  let correct1, correct2;
+
+  if (curLang == "jp") {
+    correct1 = activeList[curNdx].jp1;
+    correct2 = activeList[curNdx].jp2;
+  } else {
+    correct1 = activeList[curNdx].fi;
+    correct2 = makeSortString(correct1);
+  }
+
 
   if (!brave) {
     document.querySelector("#verdict").innerHTML = "...";
@@ -28,7 +38,7 @@ function checkPass() {
     document.querySelector("#verdict").innerHTML = "Yes - すごい !";
   } else {
     debug_console("Wrong: " + brave + " != " + correct1);
-    document.querySelector("#verdict").innerHTML = "がんばった ね - try again ... ";    
+    document.querySelector("#verdict").innerHTML = "がんばった ね - try again ... ";
   }
 }
 
@@ -37,30 +47,35 @@ function debug_console (msg) {
     console.log(dbg_prefix, msg);
 }
 
-function CheckPlain() {
-  debug_console("CheckPlain called");
-  // JQuery syntax:
-  let $pass1 = $("#pass1").val();
-  debug_console("Plain PW value: " +  $pass1);    
-}
-
 function toggleConfig() {
   $("div#config").toggle(); 
 }
 
 function toggleTryout() {
-  $("div#tryout").toggle(); 
+  $("div#tryout").toggle();  
+}
+
+function setRawList() {
+  if (curLang == 'fi') {
+    debug_console("Init Finnish");
+    rawList = suomiData();
+  } else {
+    debug_console("Init Nihon");
+    rawList = nihonData();
+  }
 }
 
 function updateConfig() {
   let filter = document.querySelector("#filter").value;
 
+  setRawList();
+
   if (! filter) {
-    jpList = rawList;
+    activeList = rawList;
     return;
   }
 
-  jpList = new Array();
+  activeList = new Array();
   curNdx = 0;
   subndx = 0;
   ndx = 0;
@@ -72,7 +87,7 @@ function updateConfig() {
     //console.log(value);    
     if (labels.includes(filter) == true) {
       console.log("Filter " + filter + " found ...");
-      jpList.push(value);
+      activeList.push(value);
     }    
   });
   buttonNext();  
@@ -85,24 +100,30 @@ function buttonClear() {
   document.querySelector("#verdict").innerHTML = "...";
 }
 
-var jpList = new Array();
+var activeList = new Array();
 var rawList = nihonData();
 
 function buttonNext() {
-  numJp = jpList.length;
+  numJp = activeList.length;
 
   if (subndx == 0) {
     curNdx = ndx;
     buttonClear();
-    document.querySelector("#label").innerHTML = jpList[ndx].eng;
+    document.querySelector("#label").innerHTML = activeList[ndx].eng;
     document.querySelector("#jp1").innerHTML = "-";
     document.querySelector("#jp2").innerHTML = "-";    
     subndx++;
   } else if ( subndx == 1) {
-    document.querySelector("#jp1").innerHTML = jpList[ndx].jp1;
-    subndx++;
+    if (curLang == 'jp') {
+      document.querySelector("#jp1").innerHTML = activeList[ndx].jp1;
+      subndx++;
+    } else {
+      document.querySelector("#jp1").innerHTML = activeList[ndx].fi;
+      subndx = 0;
+      ndx = (ndx + 1) % numJp;
+    }   
   } else {    
-    document.querySelector("#jp2").innerHTML = jpList[ndx].jp2;  
+    document.querySelector("#jp2").innerHTML = activeList[ndx].jp2;  
     subndx = 0;
     ndx = (ndx + 1) % numJp;
   }
@@ -110,9 +131,16 @@ function buttonNext() {
 
 // Syntax options for initialization ----------------------
 
+
+
 // JQuery syntax
 $(document).ready(function() {
   debug_console("Page loaded / JQuery");
+
+  curLang = document.querySelector("#curlang").innerHTML;
+  debug_console("Current language: " +  curLang);
+
+  setRawList();
 
   /* ------------------------------------------
   ** These can be used with HTTP-server:
@@ -129,11 +157,17 @@ $(document).ready(function() {
 
   $("div#config").hide();
   $("div#tryout").hide();
+
+  if (curLang == 'fi') {
+    $("span#jp2").hide();
+  }
+
+
   updateConfig();
   buttonNext();
   // Register event functions:
   $("#pass1").change(function() {
-    CheckPlain();
+    checkPass();
   });    
 });
 
@@ -149,10 +183,42 @@ document.body.onload = () => {
 */
 
 function nihonData() {
-  return rawList;
+  return nihonList;
 }
 
-var rawList = new Array(
+function suomiData() {
+  return suomiList;
+}
+
+var suomiList = new Array(
+  {
+    jp1: "xxx",  jp2: "xxx",
+    eng: "wonderful",  fi: "ihana",
+    labels : ['6.3.2021', 'aki']
+  }, {
+    jp1: "xxx",  jp2: "xxx",
+    eng: "station",  fi: "asema",
+    labels : ['6.3.2021', 'aki']
+  }, {
+    jp1: "x",  jp2: "x",
+    eng: "I am",  fi: "minä olen",
+    labels : ['6.3.2021', 'aki']
+  }, {
+    jp1: "x",  jp2: "x",    
+    eng: "you are",  fi: "sinä olet",
+    labels : ['6.3.2021', 'aki']
+  }, {
+    jp1: "x",  jp2: "x",
+    eng: "she is",  fi: "hän on",
+    labels : ['6.3.2021', 'aki']
+   }, {
+    jp1: "x",  jp2: "x",
+    eng: "library",  fi: "kirjasto",
+    labels : ['6.3.2021', 'aki']
+   }
+);
+
+var nihonList = new Array(
 {
 jp1: "おしえ",  jp2: "oshie",
 eng: "teaching",  fi: "opetus",
@@ -200,4 +266,41 @@ labels : ['homework', '6.3.2021', 'verb']
 jp1: "つくる",  jp2: "tsukuru",
 eng: "to make",  fi: "tehdä",
 labels : ['homework', '6.3.2021', 'verb']
+}, {
+  jp1: "むちゅう",  jp2: "muchuu",
+  eng: "into something",  fi: "innostunut",
+  labels : ['homework', '6.3.2021', 'verb']
+}, {
+  jp1: "ちゅうどく",  jp2: "chuudoku",
+  eng: "addict",  fi: "addikti",
+  labels : ['homework', '6.3.2021', 'verb']
+}, {
+  jp1: "いちご",  jp2: "ichigo",
+  eng: "strawberry",  fi: "mansikka",
+  labels : ['homework', '6.3.2021', 'verb']
+}, {
+  jp1: "しんぱい しょう",  jp2: "shinpai shou",
+  eng: "worry things",  fi: "olla huolissaan",
+  labels : ['homework', '6.3.2021', 'verb']  
+}, {
+  jp1: "あなた　は　なに　に　むちゅう　ですか？",  jp2: "anata wa nani ni muchuu des ka",
+  eng: "what are you really into",  fi: "mistä olet todella kiinnostunut",
+  labels : ['homework', '6.3.2021', 'phrase']  
+}, {
+  jp1: "わたし は　にほん　の　あにめ　に　むちゅう　です。",  jp2: "watasi wa nihon no anime ni muchuu des",
+  eng: "I'm a big fan of Japanese anime",  fi: "Pidän paljon japanilaisesta animesta",
+  labels : ['homework', '6.3.2021', 'phrase']    
 });
+
+var makeSortString = (function() {
+  var translate_re = /[öäüÖÄÜ]/g;
+  return function(s) {
+    var translate = {
+      "ä": "a", "ö": "o", "ü": "u",
+      "Ä": "A", "Ö": "O", "Ü": "U"   // probably more to come
+    };
+    return ( s.replace(translate_re, function(match) { 
+      return translate[match]; 
+    }) );
+  }
+})();
