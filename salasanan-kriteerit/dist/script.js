@@ -38,7 +38,7 @@ function buttonClear() {
 
 // Syntax options for initialization ----------------------
 
-// Default Syntax
+// JQuery syntax
 $(document).ready(function() {
   debug_console("Page loaded / JQuery");
   // Register event functions:
@@ -47,7 +47,8 @@ $(document).ready(function() {
   });    
 });
 
-// JQuery syntax
+// Default Syntax
+// https://www.w3schools.com/js/js_htmldom_document.asp
 document.body.onload = () => {
   debug_console("Page loaded / Default");
 }

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Japanese - にほん ご</title>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css'>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <!-- partial:index.partial.html 
+<main class="bd-content" role="main">
+  -->
+
+    <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content" role="main"></main>
+
+    <h3> Japanese &nbsp;
+        <button class="btn btn-primary" onclick="buttonNext()">Proceed</button>
+    </h3>
+
+    <div class="row">
+        <div class="col-sm-4">
+            <i><span id="label">Challenge</span></i>
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <b> <span id="jp1"> ... </> </span> </b>
+
+    </div>
+    <div class="col-sm-4">
+        <b><span id="jp2"> ... </> </b>
+    </div>
+    </div>
+
+    <hr />
+
+    <label for="pass1" onclick="toggleTryout()">Try out</label>
+    <div class="row" id="tryout">
+        <div class="form-group col-sm-6">
+            
+            <input type="text" class="form-control" name="pass1" id="pass1" aria-describedby="plain" placeholder="latin or hirakana" />
+        </div>
+
+        <div class="col-sm-4">
+            <button class="btn btn-primary" value="submit" onclick="checkPass()">Check</button>            
+        </div>
+        <div class="col-sm-8">
+            <span id="verdict"> ... </span> 
+        </div>
+        
+    </div>
+    
+
+    <hr />
+
+    <div class="row">
+
+        <div class="col-sm-4">
+            <label onclick="toggleConfig()">Config</label>
+
+        </div>
+        <div class="col-sm-8">
+            <div id="config">
+                <input type="text" name="filter" id="filter" aria-describedby="plain" placeholder="label - '6.3.2021' for instance 6.3.2021">
+                <button class="btn btn-secondary" onclick="updateConfig()">Update</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- partial -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
+    <!--
+  <script type="module" src="./script.js"></script>
+  -->
+  <span id="curlang" hidden>jp</span>  
+  <script src="./script.js"></script>
+
+</body>
+
+</html>
